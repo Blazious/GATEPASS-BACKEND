@@ -1,0 +1,26 @@
+# Python compiled files
+__pycache__/
+*.py[cod]
+
+# Virtual environment folder
+venv/
+env/
+*.env
+
+# SQLite database file
+db.sqlite3
+
+# Django migrations
+*/migrations/*.py
+*/migrations/*.pyc
+!*/migrations/__init__.py
+
+# IDE files
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Python bytecode
+*.pyc
