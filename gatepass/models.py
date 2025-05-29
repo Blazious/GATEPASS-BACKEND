@@ -30,3 +30,16 @@ class GatepassRequest(models.Model):
 
     def __str__(self):
         return f"Gatepass #{self.id} by {self.user.name} - {self.status}"
+    
+    #Gatepass item added 
+class GatepassItem(models.Model):
+    gatepass = models.ForeignKey(GatepassRequest, on_delete=models.CASCADE, related_name='items')
+    item_name = models.CharField(max_length=255)
+    quantity = models.PositiveIntegerField(default=1)
+    serial_number = models.CharField(max_length=255, blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return f"{self.item_name} x{self.quantity}"
+
+  
