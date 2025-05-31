@@ -5,8 +5,18 @@ from .models import GatepassRequest, GatepassItem
 class ItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = GatepassItem
-        fields = ["item_name","quantity","serial_number","description"]
+        fields = ["item_name","quantity","serial_number","description", "is_custom"]
+    
+    def validate(self, data):
+        is_custom = data.get('is_custom', False)
+        serial_number = data.get('serial_number')
 
+        if is_custom and not serial_number:
+            raise serializers.ValidationError({
+                'serial_number': 'Serial number is required for custom items.'
+            })
+
+        return data
 
 class GatepassRequestSerializer(serializers.ModelSerializer):
     user = serializers.PrimaryKeyRelatedField(read_only=True)
