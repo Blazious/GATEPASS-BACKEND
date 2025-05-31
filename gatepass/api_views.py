@@ -183,6 +183,27 @@ def download_gatepass_pdf(request, pk):
         table_y = height - inch - 360 - table_height
         table.drawOn(p, table_x, table_y)
 
+
+        # Coordinates for the stamp box
+        stamp_box_x = inch
+        stamp_box_y =  logo_y + logo_height + 20 # About 10 points above logo
+        stamp_box_width = 3 * inch
+        stamp_box_height = 1.5 * inch
+
+        # Draw label
+        p.setFont("Helvetica-Bold", 12)
+        p.setFillColor(colors.black)
+        p.drawString(stamp_box_x, stamp_box_y + stamp_box_height + 5, "Checkpoint Stamp:")
+
+        # Set dashed line for rectangle (dash length 3, gap length 3)
+        p.setDash(3, 3)
+
+        # Draw the rectangle with dashed lines
+        p.rect(stamp_box_x, stamp_box_y, stamp_box_width, stamp_box_height, fill=0)
+
+        # Reset dash for any other drawing
+        p.setDash()
+
         # Footer Disclaimer
         footer_text = "This gatepass is system-generated and valid only when used in accordance with company policy. It must be scanned and verified at the security checkpoint."
         p.setFont("Helvetica-Oblique", 9)
