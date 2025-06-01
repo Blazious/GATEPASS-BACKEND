@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-#0b2yzpp6w#p71_wo(en%n6#0uq0k*y3$fwvwgb5a66lfcv2fe
 DEBUG = True
 
 ALLOWED_HOSTS = ['gatepass-backend-production.up.railway.app',
-    'localhost',
+                 'gatepass-front-bmm.netlify.app', 'localhost',
     '127.0.0.1',]
 
 

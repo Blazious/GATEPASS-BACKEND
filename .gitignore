@@ -11,7 +11,7 @@ env/
 db.sqlite3
 
 # Django migrations
-*/migrations/*.py
+#*/migrations/*.py
 */migrations/*.pyc
 !*/migrations/__init__.py
 
