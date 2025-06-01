@@ -24,3 +24,6 @@ db.sqlite3
 
 # Python bytecode
 *.pyc
+
+#static files
+staticfiles/

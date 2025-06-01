@@ -112,7 +112,7 @@ def download_gatepass_pdf(request, pk):
         # Define position: bottom-right, just above the disclaimer
         logo_x = (width - logo_width) / 2  # 2 inch from the right
         logo_y = 55  # just above the footer text (30 & 45)
-        logo_path = os.path.join(settings.BASE_DIR, 'gatepass', 'static', 'gatepass', 'image.png')
+        logo_path = os.path.join(settings.BASE_DIR, 'gatepass', 'static', 'branding', 'image_gatepass_logo_uniq2025.png')
         p.drawImage(logo_path, logo_x, logo_y, width=logo_width, height=logo_height,preserveAspectRatio=True)
        
        
