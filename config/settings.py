@@ -29,7 +29,9 @@ SECRET_KEY = 'django-insecure-#0b2yzpp6w#p71_wo(en%n6#0uq0k*y3$fwvwgb5a66lfcv2fe
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['gatepass-backend-production.up.railway.app',
+    'localhost',
+    '127.0.0.1',]
 
 
 # Application definition
@@ -158,6 +160,7 @@ SIMPLE_JWT = {
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5500",  # or whatever port you're serving your frontend on
     "http://127.0.0.1:5500",
+    "https://gatepass-front-bmm.netlify.app",
 ]
 
 
