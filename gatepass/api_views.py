@@ -9,21 +9,19 @@ from rest_framework.decorators import api_view, permission_classes
 import logging
 import io
 import qrcode
-import base64
-from django.template.loader import render_to_string
-from django.http import HttpResponse, JsonResponse
 
-import traceback
+from django.template.loader import render_to_string
+from django.http import HttpResponse
+
 
 from django.conf import settings
 from reportlab.lib.pagesizes import A4
 from reportlab.pdfgen import canvas
 from django.utils.timezone import localtime
-from PIL import Image as PILImage
 from reportlab.lib.units import inch
 from reportlab.lib import colors
-from reportlab.lib.utils import ImageReader
-from reportlab.platypus import Table, TableStyle, Image
+
+from reportlab.platypus import Table, TableStyle
 import os
 
 
